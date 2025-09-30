@@ -51,12 +51,27 @@
  */
 public class App {
     // You will MODIFY THIS ONE METHOD across tasks 1–5. Do not create new methods.
-    public static void processScore() {
-
+    public static int processScore(String y, int x) {
+        if (y.equals("bonus")) {
+            if (x < 0 || x > 100) {
+               return -1;
+            }else{
+                int times = x * 2;   
+                return times;
+            }
+        }else if (y.equals("curve")){
+            if (x < 0 || x > 100) {
+               return -1;
+            }else{
+                int value = x + 3;
+                return value;
+            }
+        }else{
+            return -1;
+        }
     }
 
     public static void main(String[] args) {
-        // B- range
         // System.out.println("Task 1:");
         // processScore(); // should PRINT 100
 
@@ -80,9 +95,9 @@ public class App {
 
         // A+ range
         // System.out.println("Task 5:");
-        // System.out.println(processScore("bonus", 10)); // 20
-        // System.out.println(processScore("curve", 10)); // 13
-        // System.out.println(processScore("none", 10));  // -1 (unknown)
-        // System.out.println(processScore("bonus", -1)); // -1 (invalid)
+        System.out.println(processScore("bonus", 10)); // 20
+        System.out.println(processScore("curve", 10)); // 13
+        System.out.println(processScore("none", 10));  // -1 (unknown)
+        System.out.println(processScore("bonus", -1)); // -1 (invalid)
     }
 }
